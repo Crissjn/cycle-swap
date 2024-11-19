@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :bookings,  only: [:update]
   get "/dashboard", to: "pages#dashboard"
-
+  resources :users, only: [:new, :create]
   # Defines the root path route ("/")
   # root "posts#index"
 end

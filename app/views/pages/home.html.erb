@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="homepage-wrapper">
+  <header class="navbar">
+    <div class="container">
+      <a href="/" class="logo">Cycle Swap</a>
+      <nav class="nav-links">
+        <a href="/login">Login</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <video autoplay loop muted playsinline class="hero-video">
+      <source src="<%= asset_path('852038-hd_1920_1080_30fps.mp4') %>" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay">
+      <h1>Effortless Cycle Swapping</h1>
+      <p>Join the community and find your perfect ride.</p>
+      <a href="/signup" class="cta-button">Get Started</a>
+    </div>
+    <div class="bike-container">
+      <i class="fa-solid fa-bicycle bike"></i>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="social-links">
+       
+        <a href="https://www.instagram.com/votre-profil" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/votre-profil" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/votre-profil" target="_blank"><i class="fab fa-twitter"></i></a>
+        </a>
+      </div>
+      <p>&copy; 2024 Cycle Swap. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
