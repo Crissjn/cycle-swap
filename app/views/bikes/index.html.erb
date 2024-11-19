@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <div class="row">
+    <% if @bikes.any? %>
+      <% @bikes.each do |bike| %>
+        <div class="d-flex col-12 col-sm-6 col-md-4 mb-4">
+          <div class="h-100">
+            <!-- Card Image -->
+            <%= cl_image_tag(bike.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top") %>
+
+            <!-- Card Body -->
+            <div class="card-body">
+              <h4 class="card-title my-2"><%= bike.bike_type %></h4>
+              <p class="card-text bike-description"></p>
+              <%= link_to "View Bike", bike_path(bike), class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="col-12 text-center">
+        <p>No bikes added</p>
+      </div>
+    <% end %>
+  </div>
+</div>
