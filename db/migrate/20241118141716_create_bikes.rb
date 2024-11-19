@@ -4,7 +4,7 @@ class CreateBikes < ActiveRecord::Migration[7.1]
       t.string :type
       t.string :size
       t.string :condition
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.string :address
       t.decimal :cost_per_day
 
