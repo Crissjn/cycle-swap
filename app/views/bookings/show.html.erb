@@ -1,0 +1,10 @@
+<h1>Booking Details</h1>
+<p><strong>Buyer:</strong> <%= @booking.buyer.name %></p>
+<p><strong>Status:</strong> <%= @booking.status.capitalize %></p>
+
+<% if @booking.status == 'pending' %>
+  <%= button_to 'Accept', booking_path(@booking, status: 'accepted'), method: :put, class: 'btn btn-success' %>
+  <%= button_to 'Deny', booking_path(@booking, status: 'denied'), method: :put, class: 'btn btn-danger' %>
+<% else %>
+  <p>This booking has already been <%= @booking.status %>.</p>
+<% end %>
