@@ -3,4 +3,8 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @booking = Booking.new
   end
+  
+  def index
+    @bikes = Bike.all
+  end
 end
