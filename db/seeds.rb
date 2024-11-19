@@ -32,12 +32,12 @@ puts "2 users created"
 puts "creating picture"
 
 file = URI.parse("https://surlybikes.com/uploads/bikes/surly-midnight-special-bike-fools-gold-BK00614-800x600.jpg").open
-
+file2= URI.parse("https://www.nltweewielers.nl/wp-content/uploads/2023/05/742-bakfietsnl-cargo-classic-long-steps-middenmotor-matlegergroen-1-600x400.jpg").open
 
 puts "Creating bikes"
 
 bike1 = Bike.new(
-  bike_type: 'bakfiet',
+  bike_type: 'racefiet',
   size: 'big',
   condition: 'good',
   user: user1,
@@ -48,7 +48,7 @@ bike1.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png"
 bike1.save
 
 bike2 = Bike.new(
-  bike_type: 'bakfiet',
+  bike_type: 'racefiet',
   size: 'medium',
   condition: 'bad',
   user: user2,
@@ -57,6 +57,29 @@ bike2 = Bike.new(
 )
 bike2.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike2.save
+
+bike3 = Bike.new(
+  bike_type: 'bakfiet',
+  size: 'small',
+  condition: 'bad',
+  user: user1,
+  address: 'Amsterdam',
+  cost_per_day: 5
+)
+bike3.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png")
+bike3.save
+
+bike4 = Bike.new(
+  bike_type: 'bakfiet',
+  size: 'medium',
+  condition: 'bad',
+  user: user1,
+  address: 'Amsterdam',
+  cost_per_day: 5
+)
+bike4.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png")
+bike4.save
+
 puts "bikes create"
 puts "creating bookings"
 
