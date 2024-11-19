@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
+
 puts "deleting db"
 User.delete_all
 Bike.delete_all
@@ -25,8 +27,16 @@ user2 = User.create!(
   password_confirmation: 'topsecret'
 )
 puts "2 users created"
+
+
+puts "creating picture"
+
+file = URI.parse("https://surlybikes.com/uploads/bikes/surly-midnight-special-bike-fools-gold-BK00614-800x600.jpg").open
+
+
 puts "Creating bikes"
-bike1 = Bike.create!(
+
+bike1 = Bike.new(
   bike_type: 'bakfiet',
   size: 'big',
   condition: 'good',
@@ -34,7 +44,10 @@ bike1 = Bike.create!(
   address: 'Amsterdam',
   cost_per_day: 10
 )
-bike2 = Bike.create!(
+bike1.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
+bike1.save
+
+bike2 = Bike.new(
   bike_type: 'bakfiet',
   size: 'medium',
   condition: 'bad',
@@ -42,6 +55,8 @@ bike2 = Bike.create!(
   address: 'Amsterdam',
   cost_per_day: 5
 )
+bike2.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
+bike2.save
 puts "bikes create"
 puts "creating bookings"
 
