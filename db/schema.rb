@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_19_105016) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_19_125917) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,26 +43,26 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_19_105016) do
   end
 
   create_table "bikes", force: :cascade do |t|
-    t.string "type"
+    t.string "bike_type"
     t.string "size"
     t.string "condition"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.string "address"
     t.decimal "cost_per_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_bikes_on_users_id"
+    t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "bikes_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "bike_id", null: false
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bikes_id"], name: "index_bookings_on_bikes_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["bike_id"], name: "index_bookings_on_bike_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,7 +79,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_19_105016) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bikes", "users", column: "users_id"
-  add_foreign_key "bookings", "bikes", column: "bikes_id"
-  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "bikes", "users"
+  add_foreign_key "bookings", "bikes"
+  add_foreign_key "bookings", "users"
 end
