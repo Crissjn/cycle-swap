@@ -1,0 +1,18 @@
+<%= render "navbar" %>
+
+<div class="row">
+    <% if @bikes.any? %>
+      <% @bikes.each do |bike| %>
+        <div class="col-12 col-sm-6 col-md-4 mb-3">
+          <%= link_to list_path(bike), class: "text-decoration-none" do %>
+            <div class="card-category">
+              <%= bike.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No bikes added</p>
+    <% end %>
+  </div>
+</div>
