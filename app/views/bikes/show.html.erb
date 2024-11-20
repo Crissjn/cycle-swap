@@ -1,8 +1,11 @@
-<h1>Bike show</h1>
+<h1>Bike show <%= @bike.bike_type %></h1>
 
+
+<div >
 <h3>Book this bike</h3>
 <%= simple_form_for [@bike, @booking] do |f| %>
     <%= f.input :start_date  %>
     <%= f.input :end_date  %>
     <%= f.submit "Book", class: "btn btn-primary" %>
-<% end %>   
+<% end %>
+</div>

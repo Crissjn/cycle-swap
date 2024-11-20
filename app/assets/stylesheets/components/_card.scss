@@ -14,9 +14,13 @@
 }
 
 .rounded {
-  border-radius: 16px !important;
-  background-color: red;
+  border-radius: 12px !important;
+  background-color: white;
   padding: 16px;
+}
+
+.card-img-top {
+  border-radius: 12px;
 }
 
 .cards {
