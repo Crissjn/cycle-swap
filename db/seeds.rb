@@ -13,7 +13,8 @@ puts "deleting db"
 User.delete_all
 Bike.delete_all
 Booking.delete_all
-puts "Starting the creation of 2 users"
+
+puts "Starting the creation of users"
 user1 = User.create!(
   username: 'JohnDoe',
   email: 'john@gmail.com',
@@ -26,15 +27,34 @@ user2 = User.create!(
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-puts "2 users created"
+kelvin = User.create!(
+  username: 'kelvin',
+  email: 'kelvin@gmail.com',
+  password: 'topsecret',
+  password_confirmation: 'topsecret'
+)
+james = User.create!(
+  username: 'james',
+  email: 'james@gmail.com',
+  password: 'topsecret',
+  password_confirmation: 'topsecret'
+)
+rodrigo = User.create!(
+  username: 'rodrigo',
+  email: 'rodrigo@gmail.com',
+  password: 'topsecret',
+  password_confirmation: 'topsecret'
+)
 
-
+puts "users created"
 puts "creating picture"
 
 file = URI.parse("https://surlybikes.com/uploads/bikes/surly-midnight-special-bike-fools-gold-BK00614-800x600.jpg").open
-file2= URI.parse("https://www.nltweewielers.nl/wp-content/uploads/2023/05/742-bakfietsnl-cargo-classic-long-steps-middenmotor-matlegergroen-1-600x400.jpg").open
-
-puts "Creating bikes"
+file2 = URI.parse("https://www.nltweewielers.nl/wp-content/uploads/2023/05/742-bakfietsnl-cargo-classic-long-steps-middenmotor-matlegergroen-1-600x400.jpg").open
+file3 = URI.parse("https://images.marktplaats.com/api/v1/listing-mp-p/images/d5/d596eb88-c7c4-4cb8-af3b-2781375016e4?rule=ecg_mp_eps$_83").open
+file4 = URI.parse("https://www.nexttoskinitaliashop.it/wp-content/uploads/2024/02/FAT-BIKE-ENERGIA-REAL.jpg").open
+puts "pice created"
+puts "reating bikes"
 
 bike1 = Bike.new(
   bike_type: 'racefiet',
@@ -42,7 +62,8 @@ bike1 = Bike.new(
   condition: 'good',
   user: user1,
   address: 'Amsterdam',
-  cost_per_day: 10
+  cost_per_day: 10,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 )
 bike1.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike1.save
@@ -53,7 +74,8 @@ bike2 = Bike.new(
   condition: 'bad',
   user: user2,
   address: 'Amsterdam',
-  cost_per_day: 5
+  cost_per_day: 5,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 )
 bike2.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike2.save
@@ -64,23 +86,61 @@ bike3 = Bike.new(
   condition: 'bad',
   user: user1,
   address: 'Amsterdam',
-  cost_per_day: 5
+  cost_per_day: 5,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 )
 bike3.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png")
 bike3.save
 
 bike4 = Bike.new(
-  bike_type: 'bakfiet',
+  bike_type: 'omafiet',
   size: 'medium',
   condition: 'bad',
   user: user1,
   address: 'Amsterdam',
-  cost_per_day: 5
+  cost_per_day: 5,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
 )
-bike4.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png")
+bike4.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png")
 bike4.save
 
-puts "bikes create"
+bike5 = Bike.new(
+  bike_type: 'omafiet',
+  size: 'medium',
+  condition: 'bad',
+  user: rodrigo,
+  address: 'Amsterdam',
+  cost_per_day: 5,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+)
+bike5.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png")
+bike5.save
+
+bike6 = Bike.new(
+  bike_type: 'fat bike',
+  size: 'medium',
+  condition: 'good',
+  user: james,
+  address: 'Amsterdam',
+  cost_per_day: 5,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+)
+bike6.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
+bike6.save
+
+bike7 = Bike.new(
+  bike_type: 'omafiet',
+  size: 'medium',
+  condition: 'bad',
+  user: kelvin,
+  address: 'Amsterdam',
+  cost_per_day: 5,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+)
+bike7.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
+bike7.save
+
+puts "bikes created"
 puts "creating bookings"
 
 Booking.create!(
@@ -89,3 +149,11 @@ Booking.create!(
   start_date: DateTime.new(2024, 10, 16, 0, 0, 0),
   end_date: DateTime.new(2024, 10, 20, 0, 0, 0)
 )
+
+Booking.create!(
+  user: james,
+  bike: bike4,
+  start_date: DateTime.new(2024, 9, 29),
+  end_date: DateTime.new(2024, 10, 9)
+)
+puts "booking created"
