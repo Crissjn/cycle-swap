@@ -1,15 +1,17 @@
 <div class="container my-5">
+  <h2>Available Bikes</h2>
   <div class="row">
     <% if @bikes.any? %>
       <% @bikes.each do |bike| %>
         <div class="d-flex col-12 col-sm-6 col-md-4 mb-4">
-          <div class="h-100">
+          <div class="rounded">
             <!-- Card Image -->
             <%= cl_image_tag(bike.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top") %>
 
             <!-- Card Body -->
             <div class="card-body">
               <h4 class="card-title my-2"><%= bike.bike_type %></h4>
+              <p>€ <%= bike.cost_per_day %>per day</p>
               <p class="card-text bike-description"></p>
               <%= link_to "View Bike", bike_path(bike), class: "btn btn-primary" %>
             </div>
