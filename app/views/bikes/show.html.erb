@@ -7,8 +7,9 @@
           width: 400, height: 300, crop: :fill , class: "card-img-top img-fluid") %>
         <div class="card-body">
           <div class="row">
-            <div class="col-4"><h3 class="card-title"><%= @bike.bike_type %></h3></div>
+            <div class="col-4"><h4 class="card-title">Type: <%= @bike.bike_type %></h4></div>
             <div class="col-4">
+            <strong>State:</strong>
               <% if @bike.condition == "bad" %>
                 <i class="<%= 'fa-solid fa-face-grin-beam-sweat fa-lg' %> " style= "color: red" >   <%= @bike.condition %></i>
               <% elsif @bike.condition == "good" %>
@@ -17,7 +18,7 @@
                 <i class="<%= 'fa-solid fa-face-meh fa-lg'%> " style= "color: yellow" >   <%= @bike.condition %></i>
                 <% end %>
               </div>
-            <div class="col-4"><h4 class="card-title"><%= @bike.size %></h4></div>
+            <div class="col-4"><h5 class="card-title">Size: <%= @bike.size %></h5></div>
           </div>
           <div class="row">
              <p  class="card-text"><%= @bike.description %></p>
