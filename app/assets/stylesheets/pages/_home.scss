@@ -72,10 +72,12 @@ a {
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 30px;
-  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0); /* Black background with 50% opacity */
+  color: white; /* Ensure the text remains white */
+  padding: 20px; /* Add some spacing inside the box */
+  text-align: center; /* Center align the text */
+  border-radius: 10px; /* Optional: round the corners of the box */
+  display: inline-block;
 }
 
 .hero-overlay h1 {
@@ -117,7 +119,7 @@ a {
   font-size: 4rem;
   position: absolute;
   top: 50%;
-  left: 0; 
+  left: 0;
   transform: translate(-100px, -50%);
   animation: bikeRide 12s linear infinite;
   color: #0056b3;
@@ -155,4 +157,22 @@ a {
 
 .social-links a:hover {
   color: #0056b3;
+}
+
+.rowdies-light {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rowdies-regular p {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rowdies-bold h1 {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
