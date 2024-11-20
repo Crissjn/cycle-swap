@@ -7,7 +7,7 @@
           width: 400, height: 300, crop: :fill , class: "card-img-top img-fluid") %>
         <div class="card-body">
           <div class="row">
-            <div class="col-4"><h4 class="card-title">Type: <%= @bike.bike_type %></h4></div>
+            <div class="col-4"><h4 class="card-title"> <%= @bike.bike_type.capitalize %></h4></div>
             <div class="col-4">
             <strong>State:</strong>
               <% if @bike.condition == "bad" %>

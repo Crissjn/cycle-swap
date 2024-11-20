@@ -57,7 +57,7 @@ puts "pice created"
 puts "creating bikes"
 
 bike1 = Bike.new(
-  bike_type: 'racefiet',
+  bike_type: 'race bike',
   size: 'big',
   condition: 'good',
   user: user1,
@@ -69,7 +69,7 @@ bike1.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png"
 bike1.save
 
 bike2 = Bike.new(
-  bike_type: 'racefiet',
+  bike_type: 'race bike',
   size: 'medium',
   condition: 'bad',
   user: user2,
@@ -81,7 +81,7 @@ bike2.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png"
 bike2.save
 
 bike3 = Bike.new(
-  bike_type: 'bakfiet',
+  bike_type: 'cargo bike',
   size: 'small',
   condition: 'bad',
   user: user1,
@@ -93,7 +93,7 @@ bike3.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png
 bike3.save
 
 bike4 = Bike.new(
-  bike_type: 'omafiet',
+  bike_type: 'city bike',
   size: 'medium',
   condition: 'average',
   user: user1,
@@ -105,7 +105,7 @@ bike4.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png"
 bike4.save
 
 bike5 = Bike.new(
-  bike_type: 'omafiet',
+  bike_type: 'city bike',
   size: 'medium',
   condition: 'bad',
   user: rodrigo,
@@ -117,7 +117,7 @@ bike5.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png"
 bike5.save
 
 bike6 = Bike.new(
-  bike_type: 'fat-bike',
+  bike_type: 'fat bike',
   size: 'medium',
   condition: 'good',
   user: james,
@@ -129,7 +129,7 @@ bike6.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png
 bike6.save
 
 bike7 = Bike.new(
-  bike_type: 'fat-bike',
+  bike_type: 'fat bike',
   size: 'medium',
   condition: 'bad',
   user: kelvin,
@@ -146,14 +146,14 @@ puts "creating bookings"
 Booking.create!(
   user: user1,
   bike: bike2,
-  start_date: DateTime.new(2024, 10, 16, 0, 0, 0),
-  end_date: DateTime.new(2024, 10, 20, 0, 0, 0)
+  start_date: DateTime.new(2025, 10, 16, 0, 0, 0),
+  end_date: DateTime.new(2025, 10, 20, 0, 0, 0)
 )
 
 Booking.create!(
   user: james,
   bike: bike4,
-  start_date: DateTime.new(2024, 9, 29),
-  end_date: DateTime.new(2024, 10, 9)
+  start_date: DateTime.new(2025, 9, 29),
+  end_date: DateTime.new(2025, 10, 9)
 )
 puts "booking created"
