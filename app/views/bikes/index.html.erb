@@ -1,9 +1,9 @@
-<div class="container my-5">
+<div class="container my-5 mt-8">
   <h2>Available Bikes</h2>
   <div class="row">
     <% if @bikes.any? %>
       <% @bikes.each do |bike| %>
-        <div class="d-flex col-12 col-sm-6 col-md-4 mb-4">
+        <div class="d-flex col-12 col-sm-6 col-md-4 mb-4 mx-0.5">
           <div class="rounded">
             <!-- Card Image -->
             <%= cl_image_tag(bike.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top") %>
