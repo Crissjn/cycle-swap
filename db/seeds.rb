@@ -95,7 +95,7 @@ bike3.save
 bike4 = Bike.new(
   bike_type: 'omafiet',
   size: 'medium',
-  condition: 'bad',
+  condition: 'average',
   user: user1,
   address: 'Amsterdam',
   cost_per_day: 5,

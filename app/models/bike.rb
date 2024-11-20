@@ -10,7 +10,7 @@ class Bike < ApplicationRecord
             inclusion: { in: %(big medium small),
                          message: "%{value} is not a valid bike size" }
   validates :condition, presence: true,
-              inclusion:{ in: %(good average bad),
+            inclusion:{ in: %(good average bad),
                           message: "${value} is not a valid bike condition" }
   validates :user_id, presence: true
   validates :address, presence: true
