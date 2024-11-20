@@ -54,7 +54,7 @@ file2 = URI.parse("https://www.nltweewielers.nl/wp-content/uploads/2023/05/742-b
 file3 = URI.parse("https://images.marktplaats.com/api/v1/listing-mp-p/images/d5/d596eb88-c7c4-4cb8-af3b-2781375016e4?rule=ecg_mp_eps$_83").open
 file4 = URI.parse("https://www.nexttoskinitaliashop.it/wp-content/uploads/2024/02/FAT-BIKE-ENERGIA-REAL.jpg").open
 puts "pice created"
-puts "reating bikes"
+puts "creating bikes"
 
 bike1 = Bike.new(
   bike_type: 'racefiet',
@@ -63,7 +63,7 @@ bike1 = Bike.new(
   user: user1,
   address: 'Amsterdam',
   cost_per_day: 10,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam "
 )
 bike1.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike1.save
@@ -75,7 +75,7 @@ bike2 = Bike.new(
   user: user2,
   address: 'Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
 )
 bike2.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike2.save
@@ -87,7 +87,7 @@ bike3 = Bike.new(
   user: user1,
   address: 'Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
 )
 bike3.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png")
 bike3.save
@@ -95,11 +95,11 @@ bike3.save
 bike4 = Bike.new(
   bike_type: 'omafiet',
   size: 'medium',
-  condition: 'bad',
+  condition: 'average',
   user: user1,
   address: 'Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  "
 )
 bike4.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png")
 bike4.save
@@ -111,31 +111,31 @@ bike5 = Bike.new(
   user: rodrigo,
   address: 'Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
 )
 bike5.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png")
 bike5.save
 
 bike6 = Bike.new(
-  bike_type: 'fat bike',
+  bike_type: 'fat-bike',
   size: 'medium',
   condition: 'good',
   user: james,
   address: 'Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
 )
 bike6.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
 bike6.save
 
 bike7 = Bike.new(
-  bike_type: 'omafiet',
+  bike_type: 'fat-bike',
   size: 'medium',
   condition: 'bad',
   user: kelvin,
   address: 'Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  "
 )
 bike7.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
 bike7.save

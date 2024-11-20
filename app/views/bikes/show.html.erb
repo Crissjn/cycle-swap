@@ -1,11 +1,40 @@
-<h1>Bike show <%= @bike.bike_type %></h1>
 
-
-<div >
-<h3>Book this bike</h3>
-<%= simple_form_for [@bike, @booking] do |f| %>
-    <%= f.input :start_date  %>
-    <%= f.input :end_date  %>
-    <%= f.submit "Book", class: "btn btn-primary" %>
-<% end %>
+<div class="container" style=" margin-top: 80px;">
+  <div class="row">
+    <div class="col-8">
+      <div class="card" style="width: 34rem;">
+        <%= cl_image_tag(@bike.photo.key ,
+          width: 400, height: 300, crop: :fill , class: "card-img-top img-fluid") %>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4"><h3 class="card-title"><%= @bike.bike_type %></h3></div>
+            <div class="col-4">
+              <% if @bike.condition == "bad" %>
+                <i class="<%= 'fa-solid fa-face-grin-beam-sweat fa-lg' %> " style= "color: red" >   <%= @bike.condition %></i>
+              <% elsif @bike.condition == "good" %>
+                <i class="<%= 'fa-solid fa-face-smile fa-lg' %> " style= "color: green" >   <%= @bike.condition %></i>
+              <% else %>
+                <i class="<%= 'fa-solid fa-face-meh fa-lg'%> " style= "color: yellow" >   <%= @bike.condition %></i>
+                <% end %>
+              </div>
+            <div class="col-4"><h4 class="card-title"><%= @bike.size %></h4></div>
+          </div>
+          <div class="row">
+             <p  class="card-text"><%= @bike.description %></p>
+          </div>
+          <div class="row text-end">
+            <h4>Cost per day : <%= @bike.cost_per_day %> € </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <h3>Book this bike</h3>
+      <%= simple_form_for [@bike, @booking] do |f| %>
+          <%= f.input :start_date  %>
+          <%= f.input :end_date  %>
+          <%= f.submit "Book", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
