@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     #if succesful redirects to bikes page with a message
     #if unsuccesful redirects to page with an error message
     if @booking.save
-      redirect_to @bike, notice: "booking succesful"
+      redirect_to :dashboard, notice: "booking succesful"
 
     else
       render 'bikes/show', status: :unprocessable_entity
