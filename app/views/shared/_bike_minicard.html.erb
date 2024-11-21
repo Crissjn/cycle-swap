@@ -8,6 +8,11 @@
           <div class="row"><%= bike.bike_type %> <%= bike.bookings.count %> </div>
 
           <%= link_to "See bike", bike_path(bike), class: "btn btn-primary"%>
+          <%= link_to "Edit bike", edit_bike_path(bike), class: "btn btn-primary"%>
+          <%= link_to "Delete",
+                bike_path(bike),
+                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                 class: "btn btn-danger"%>
     </div>
   </div>
 </div>

@@ -4,7 +4,6 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
     @booking = Booking.new
-    # @current_user = current_user
   end
 
   def index
@@ -29,6 +28,22 @@ class BikesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @bike = Bike.find(params[:id])
+    @bike.destroy
+    redirect_to dashboard_path, status: :see_other, alert: "bike deleted!"
+  end
+
+  def edit
+    @bike = Bike.find(params[:id])
+  end
+
+  def update
+    @bike = Bike.find(params[:id])
+    @bike.update(bike_params)
+    redirect_to dashboard_path
   end
 
   private
