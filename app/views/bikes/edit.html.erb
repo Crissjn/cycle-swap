@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h3>Hi <%= @user.username %>! Here you can create a new bike</h3>
+      <h3>Hi <%= @user.username %>! Here you can modify a bike</h3>
       <div></div>
       <%= simple_form_for @bike do |f| %>
         <div class="row">
@@ -17,7 +17,7 @@
             <%= f.input :description %>
           </div>
         </div>
-        <%= f.submit "Create bike", class: "btn btn-primary"%>
+        <%= f.submit "Edit bike", class: "btn btn-primary"%>
       <% end %>
     </div>
   </div>
