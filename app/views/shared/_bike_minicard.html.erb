@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body row">
+    <div class="col-4">
+     <%= cl_image_tag(bike.photo.key ,
+          width: 100, height: 75, ) %>
+  </div>
+    <div class="col-8">
+          <div class="row"><%= bike.bike_type %> <%= bike.bookings.count %> </div>
+
+          <%= link_to "See bike", bike_path(bike), class: "btn btn-primary"%>
+    </div>
+  </div>
+</div>

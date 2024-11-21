@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body row">
+    <div class="col-4">
+     <%= cl_image_tag(booking.bike.photo.key ,
+          width: 100, height: 75, ) %>
+     </div>
+     <div class="col-8">
+        <div class="row">
+          <p>From: <%= booking.start_date %>  to: <%= booking.end_date %> </p>
+        </div>
+      <div class="row">
+        <div class="col-6">
+        <% if booking.end_date < Date.today  %>
+            <% @status = "ENDED" %>
+          <% elsif booking.start_date < Date.today %>
+            <%  @status = "ACTIVE" %>
+            <% else %>
+              <% @status = "WAITING"  %>
+        <% end %>
+          <button class="btn btn-warning"><%= @status %></button>
+        </div>
+        <div class="col-6">
+          <%= link_to "See bike", bike_path(booking.bike), class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

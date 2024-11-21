@@ -4,10 +4,10 @@ class Bike < ApplicationRecord
   has_one_attached :photo
 
   validates :bike_type, presence: true,
-            inclusion: { in: ('city bike'  'fat bike' 'race bike' 'cargo bike'),
+            inclusion: { in: ('city bike' 'fat bike' 'race bike' 'cargo bike'),
                          message: "%{value} is not a valid bike type" }
   validates :size, presence: true,
-            inclusion: { in: %(big medium small),
+            inclusion: { in: ('large' 'medium' 'small'),
                          message: "%{value} is not a valid bike size" }
   validates :condition, presence: true,
             inclusion:{ in: %(good average bad),

@@ -5,10 +5,11 @@ class BookingsController < ApplicationController
     @booking.bike = @bike
     @booking.user = current_user
     #save booking to database
-    #if succesful redirects to bikes page with a message 
-    #if unsuccesful redirects to page with an error message 
+    #if succesful redirects to bikes page with a message
+    #if unsuccesful redirects to page with an error message
     if @booking.save
       redirect_to @bike, notice: "booking succesful"
+
     else
       render 'bikes/show', status: :unprocessable_entity
     end
