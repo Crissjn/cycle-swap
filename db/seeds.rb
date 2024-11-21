@@ -10,9 +10,9 @@
 require "open-uri"
 
 puts "deleting db"
-User.delete_all
-Bike.delete_all
 Booking.delete_all
+Bike.delete_all
+User.delete_all
 
 puts "Starting the creation of users"
 user1 = User.create!(
@@ -140,9 +140,30 @@ bike7 = Bike.new(
 bike7.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
 bike7.save
 
+bike8 = Bike.new(
+  bike_type: 'city bike',
+  size: 'medium',
+  condition: 'good',
+  user: kelvin,
+  address: 'Amsterdam',
+  cost_per_day: 15,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  "
+)
+bike8.photo.attach(io: file3, filename: "fat-bike.png", content_type: "image/png")
+bike8.save
+
 puts "bikes created"
 puts "creating bookings"
-
+Booking.insert_all([
+  { user_id: kelvin.id,
+    bike_id: bike4.id,
+    start_date: DateTime.new(2024, 8, 16, 0, 0, 0),
+    end_date: DateTime.new(2024, 8, 20, 0, 0, 0) },
+  { user_id: kelvin.id,
+    bike_id: bike2.id,
+    start_date: DateTime.new(2024, 9, 21, 0, 0, 0),
+    end_date: DateTime.new(2024, 9, 25, 0, 0, 0) }
+                   ])
 Booking.create!(
   user: user1,
   bike: bike2,

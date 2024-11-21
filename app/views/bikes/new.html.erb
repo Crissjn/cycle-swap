@@ -1,0 +1,23 @@
+<div class="container" data-controller="bullshit">
+  <div class="row">
+    <h3>Hi <%= @user.username %>! Here you can create a new bike</h3>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-6">
+        <%= simple_form_for @bike do |f| %>
+          <%= f.input :bike_type, collection: ["city bike", "race bike", "cargo bike", "fat bike"]  %>
+          <%= f.input :address  %>
+          <%= f.input :size, collection: ["small", "medium", "large"] %>
+      </div>
+      <div class="col-6">
+          <%= f.input :condition ,collection: ["bad", "average", "good"] %>
+          <%= f.input :cost_per_day %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input :description %>
+      </div>
+       <%= f.submit "Create bike", class: "btn btn-primary", data: { "bullshit-target": "btn"} %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
