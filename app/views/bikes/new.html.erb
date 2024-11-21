@@ -6,7 +6,7 @@
         <div class="col-6">
         <%= simple_form_for @bike do |f| %>
           <%= f.input :bike_type, collection: ["city bike", "race bike", "cargo bike", "fat bike"]  %>
-          <%= f.input :address  %>
+          <%= f.input :address %>
           <%= f.input :size, collection: ["small", "medium", "large"] %>
       </div>
       <div class="col-6">
