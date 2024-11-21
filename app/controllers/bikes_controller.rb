@@ -11,9 +11,17 @@ class BikesController < ApplicationController
     @bikes = Bike.all
     @markers = @bikes.geocoded.map do |bike|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: bike.latitude,
+        lng: bike.longitude
       }
+    end
+
+    if params[:location].present?
+      @bikes = @bikes.where("location ILIKE ?", "%#{params[:location]}%")
+    end
+
+    if params[:bike_type].present?
+      @bikes = @bikes.where("bike_type ILIKE ?", "%#{params[:bike_type]}%")
     end
   end
 
