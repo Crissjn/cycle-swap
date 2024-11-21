@@ -1,7 +1,7 @@
 class Bike < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_one_attached :photo
+  has_one_attached :photo, dependent: :purge
 
   validates :bike_type, presence: true,
             inclusion: { in: ('city bike' 'fat bike' 'race bike' 'cargo bike'),

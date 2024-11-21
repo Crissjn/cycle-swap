@@ -6,16 +6,15 @@
           <%= render partial: "shared/booking_minicard",locals: {booking: booking} %>
         <% end %>
       </div>
-    <div class="col-4 mt-2">
+    <div class="col-5 mt-2">
       <h2>Your bikes!</h2>
         <% @user_bikes.each do |bike| %>
           <%= render partial: "shared/bike_minicard",locals: {bike: bike} %>
         <% end %>
     </div>
-    <div class="col-4">
+    <div class="col-3">
       <div class="card mt-2">
         <h2 class="card-title"><%= @user.username %> stats!</h2>
-        <%= link_to  "Create a new bike", new_bike_path, :data => { user: @user} %>
       </div>
     </div>
   </div>
