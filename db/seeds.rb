@@ -61,9 +61,9 @@ bike1 = Bike.new(
   size: 'big',
   condition: 'good',
   user: user1,
-  address: 'Amsterdam',
+  address: 'IJsbaanpad 9, 1076 CV Amsterdam',
   cost_per_day: 10,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam "
+  description: "Really nice bike to ride. Fast to move in the city but no storage capacity. "
 )
 bike1.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike1.save
@@ -71,11 +71,11 @@ bike1.save
 bike2 = Bike.new(
   bike_type: 'race bike',
   size: 'medium',
-  condition: 'bad',
+  condition: 'average',
   user: user2,
-  address: 'Amsterdam',
+  address: 'Johan Cruijff Boulevard 1, 1101 AX Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+  description: "This was my first bike here in the Netherlands. Tires are brand new but the seat is not too confortable. "
 )
 bike2.photo.attach(io: file, filename: "racefiet.png", content_type: "image/png")
 bike2.save
@@ -83,11 +83,11 @@ bike2.save
 bike3 = Bike.new(
   bike_type: 'cargo bike',
   size: 'small',
-  condition: 'bad',
+  condition: 'good',
   user: user1,
-  address: 'Amsterdam',
+  address: 'Museumstraat 1, 1071 XX Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+  description: "Ideal if you have to move a lot of things in the city. Need a bit of practice to get used to it. "
 )
 bike3.photo.attach(io: file2, filename: "racefiet.png", content_type: "image/png")
 bike3.save
@@ -97,9 +97,9 @@ bike4 = Bike.new(
   size: 'medium',
   condition: 'average',
   user: user1,
-  address: 'Amsterdam',
+  address: 'IJburglaan 719, 1087 BS Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  "
+  description: "Best way to visit Amsterdam like a real amsterdammer!"
 )
 bike4.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png")
 bike4.save
@@ -107,11 +107,11 @@ bike4.save
 bike5 = Bike.new(
   bike_type: 'city bike',
   size: 'medium',
-  condition: 'bad',
+  condition: 'average',
   user: rodrigo,
-  address: 'Amsterdam',
+  address: 'Meer en Vaart 300, 1068 LE Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+  description: "Pedal brakes need a bit of practice.Nice basket in the front to have extra storage. "
 )
 bike5.photo.attach(io: file3, filename: "omafiet.png", content_type: "image/png")
 bike5.save
@@ -121,9 +121,9 @@ bike6 = Bike.new(
   size: 'medium',
   condition: 'good',
   user: james,
-  address: 'Amsterdam',
+  address: 'Amstel Station, Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+  description: "Electric fat bike.Ideal if you don't want to sweat too much. "
 )
 bike6.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
 bike6.save
@@ -131,11 +131,11 @@ bike6.save
 bike7 = Bike.new(
   bike_type: 'fat bike',
   size: 'medium',
-  condition: 'bad',
+  condition: 'good',
   user: kelvin,
-  address: 'Amsterdam',
+  address: 'Centraal Station, Amsterdam',
   cost_per_day: 5,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  "
+  description: "This fat bike is brand new, barely used."
 )
 bike7.photo.attach(io: file4, filename: "fat-bike.png", content_type: "image/png")
 bike7.save
@@ -145,9 +145,9 @@ bike8 = Bike.new(
   size: 'medium',
   condition: 'good',
   user: kelvin,
-  address: 'Amsterdam',
+  address: 'Dam Square, Amsterdam',
   cost_per_day: 15,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  "
+  description: "Great bike to go around with friends. Not good during rainy days. "
 )
 bike8.photo.attach(io: file3, filename: "fat-bike.png", content_type: "image/png")
 bike8.save
@@ -177,4 +177,6 @@ Booking.create!(
   start_date: DateTime.new(2025, 9, 29),
   end_date: DateTime.new(2025, 10, 9)
 )
+
+
 puts "booking created"
