@@ -10,8 +10,8 @@ class BikesController < ApplicationController
     @bikes = Bike.all
     @markers = @bikes.geocoded.map do |bike|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: bike.latitude,
+        lng: bike.longitude
       }
     end
   end
