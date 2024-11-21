@@ -2,22 +2,28 @@
   <div class="row">
     <div class="col-6">
       <h3>Hi <%= @user.username %>! Here you can modify a bike</h3>
-      <div></div>
       <%= simple_form_for @bike do |f| %>
         <div class="row">
           <div class="col-6">
-            <%= f.input :bike_type, collection: ["city bike", "race bike", "cargo bike", "fat bike"]  %>
-            <%= f.input :address  %>
-            <%= f.input :size, collection: ["small", "medium", "large"] %>
+            <h4>Bike Details</h4>
+            <%= f.input :bike_type, collection: ["city bike", "race bike", "cargo bike", "fat bike"], label: "Type of Bike", required: false %>
+            <%= f.input :size, collection: ["small", "medium", "large"], label: "Bike Size", required: false %>
+            <%= f.input :condition, collection: ["bad", "average", "good"], label: "Condition", required: false %>
           </div>
           <div class="col-6">
-            <%= f.input :condition ,collection: ["bad", "average", "good"] %>
-            <%= f.input :cost_per_day %>
-            <%= f.input :photo, as: :file %>
-            <%= f.input :description %>
+            <h4>Rental Details</h4>
+            <%= f.input :cost_per_day, label: "Cost per Day (€)", required: false %>
+            <%= f.input :address, label: "Rental Address", required: false %>
           </div>
         </div>
-        <%= f.submit "Edit bike", class: "btn btn-primary"%>
+        <div class="row">
+          <div class="col-12">
+            <h4>Additional Information</h4>
+            <%= f.input :description, label: "Description", required: false %>
+            <%= f.input :photo, as: :file, label: "Upload Photo", required: false %>
+          </div>
+        </div>
+        <%= f.submit "Edit Bike", class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
   </div>
