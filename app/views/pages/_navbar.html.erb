@@ -25,7 +25,7 @@
           <input class="form-control me-2" type="search" name="bike_type" placeholder="type of bike" aria-label="Search">
           <%= link_to "Search", bikes_path, class: "btn btn-success" %>
           <%= form_with url: bikes_path, method: :get, class: "d-flex mx-auto justify-content-center" do %>
-            <%= select_tag(:bike_type, options_for_select([" ","fat bike","city bike","race bike","cargo bike"]))%>
+            <%= select_tag(:bike_type, options_for_select([nil,"fat bike","city bike","race bike","cargo bike"]))%>
           <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
           <% end %>
         <%# </form> %>
