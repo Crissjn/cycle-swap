@@ -32,7 +32,7 @@ gem "devise"
 # cloudinary for picture depository
 gem "cloudinary"
 
-#gem for mapbox geocoding
+# gem for mapbox geocoding
 gem "geocoder"
 
 # Use Redis adapter to run Action Cable in production
@@ -84,3 +84,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem 'stripe'
