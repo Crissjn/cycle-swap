@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.bike = @bike
     @booking.user = current_user
+    @marker = [{
+      lat: @bike.latitude,
+      lng: @bike.longitude
+    }]
     #save booking to database
     #if succesful redirects to bikes page with a message
     #if unsuccesful redirects to page with an error message
@@ -11,7 +15,7 @@ class BookingsController < ApplicationController
       redirect_to :dashboard, notice: "booking succesful"
 
     else
-      render 'bikes/show', status: :unprocessable_entity
+      render "bikes/show", status: :unprocessable_entity
     end
   end
 
