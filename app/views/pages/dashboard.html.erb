@@ -13,8 +13,13 @@
         <% end %>
     </div>
     <div class="col-3">
+    <h2><%= @user.username %> stats!</h2>
       <div class="card mt-2">
-        <h2 class="card-title"><%= @user.username %> stats!</h2>
+
+        <ul>
+        <li><strong>Bikes owned: <%= @user_bikes.count %></li>
+        <li><strong>Bikes rented: <%= @user_bookings.count %></li>
+        </ul>
       </div>
     </div>
   </div>
