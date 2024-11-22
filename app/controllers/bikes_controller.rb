@@ -4,6 +4,10 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
     @booking = Booking.new
+    @marker = [{
+        lat: @bike.latitude,
+        lng: @bike.longitude
+      }]
   end
 
   def index
