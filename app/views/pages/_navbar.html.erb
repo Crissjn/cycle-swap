@@ -15,18 +15,20 @@
             <li class="nav-item active">
               <%= link_to "home", root_path, class: "nav-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to "Messages", "#", class: "nav-link" %>
-            </li>
+
           <% end %>
         </ul>
 
         <!-- Centered search bar -->
-        <form class="d-flex mx-auto justify-content-center" role="search">
-          <input class="form-control me-2" type="search" name="location" placeholder="location" aria-label="Search">
+        <%# <form class="d-flex mx-auto justify-content-center" role="search"> %>
+          <%# <input class="form-control me-2" type="search" name="location" placeholder="location" aria-label="Search">
           <input class="form-control me-2" type="search" name="bike_type" placeholder="type of bike" aria-label="Search">
           <%= link_to "Search", bikes_path, class: "btn btn-success" %>
-        </form>
+          <%= form_with url: bikes_path, method: :get, class: "d-flex mx-auto justify-content-center" do %>
+            <%= select_tag(:bike_type, options_for_select([nil,"fat bike","city bike","race bike","cargo bike"]))%>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <% end %>
+        <%# </form> %>
 
         <ul class="navbar-nav ms-auto">
           <% if user_signed_in? %>
