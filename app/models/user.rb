@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :bookings
 
   validates :username, uniqueness: true, presence: true
+
+  has_one_attached :image
 end
