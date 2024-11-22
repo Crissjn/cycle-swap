@@ -8,6 +8,9 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
+    if params[:bike_type].present?
+      @bikes = @bikes.where(bike_type: params[:bike_type])
+    end
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
