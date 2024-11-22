@@ -3,7 +3,7 @@
   <div class="row">
     <% if @bikes.any? %>
       <% @bikes.each do |bike| %>
-        <div class="d-flex col-8 col-sm-4 col-md-3 mb-2 mx-0.5">
+        <div class="d-flex col-12 col-sm-6 col-md-4 mb-4 mx-0.5">
           <div class="rounded">
             <!-- Card Image -->
             <%= cl_image_tag(bike.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top") %>
@@ -13,27 +13,26 @@
               <p>€<%= bike.cost_per_day.to_i %> / day</p>
               <p class="card-text bike-description"></p>
               <div class="d-flex justify-content-between">
-                <%= link_to "More Details", bike_path(bike), class: "btn btn-primary" %>
-                <%= link_to "Book Now!", bike_path(bike), class: "btn btn-success" %>
+              <%= link_to "More Details", bike_path(bike), class: "btn btn-primary" %>
+              <%= link_to "Book Now!", bike_path(bike), class: "btn btn-success" %>
               </div>
             </div>
           </div>
         </div>
       <% end %>
-      <div class="col-4" style="width: 50%; height: 400px;"
-        data-controller ="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
     <% else %>
-      <div class="col-8 text-center">
+      <div class="col-12 text-center">
         <p>No bikes added</p>
       </div>
     <% end %>
   </div>
 </div>
 
-
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
 <div class="container">
 
