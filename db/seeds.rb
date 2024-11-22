@@ -14,38 +14,51 @@ Booking.delete_all
 Bike.delete_all
 User.delete_all
 
+kelvin_pic = URI.parse("https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg").open
+default_pic = URI.parse("https://cdn-icons-png.flaticon.com/512/3300/3300568.png").open
+
 puts "Starting the creation of users"
-user1 = User.create!(
+user1 = User.new(
   username: 'JohnDoe',
   email: 'john@gmail.com',
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-user2 = User.create!(
+user1.image.attach(io: default_pic, filename: "profile.png", content_type: "image/png")
+user1.save
+user2 = User.new(
   username: 'rick87',
   email: 'rick@gmail.com',
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-kelvin = User.create!(
+user2.image.attach(io: default_pic, filename: "profile.png", content_type: "image/png")
+user2.save
+kelvin = User.new(
   username: 'kelvin',
   email: 'kelvin@gmail.com',
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-james = User.create!(
+kelvin.image.attach(io: kelvin_pic, filename: "profile.png", content_type: "image/png")
+kelvin.save
+
+james = User.new(
   username: 'james',
   email: 'james@gmail.com',
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-rodrigo = User.create!(
+james.image.attach(io: default_pic, filename: "profile.png", content_type: "image/png")
+james.save
+rodrigo = User.new(
   username: 'rodrigo',
   email: 'rodrigo@gmail.com',
   password: 'topsecret',
   password_confirmation: 'topsecret'
 )
-
+rodrigo.image.attach(io: default_pic, filename: "profile.png", content_type: "image/png")
+rodrigo.save
 puts "users created"
 puts "creating picture"
 
