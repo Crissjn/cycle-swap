@@ -10,14 +10,15 @@
       </button>
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
+        <%# <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
+
             <li class="nav-item active">
               <%= link_to "home", root_path, class: "nav-link" %>
             </li>
 
-          <% end %>
-        </ul>
+          <%# <% end %>
+        <%# </ul> %>
 
         <!-- Centered search bar -->
         <%# <form class="d-flex mx-auto justify-content-center" role="search"> %>
@@ -33,7 +34,7 @@
         <ul class="navbar-nav ms-auto">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= cl_image_tag(@user.photo.key), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Dashboard", :dashboard, class: "dropdown-item" %>
                 <%= link_to "New bike", new_bike_path, class: "dropdown-item", :data => { user: @user} %>
