@@ -16,11 +16,14 @@
             <%# <li class="nav-item active"> %>
               <%= link_to "home", root_path, class: "nav-link" %>
 
+<<<<<<< HEAD
             </li>
           
         </ul>
 
 
+=======
+>>>>>>> f74144fcc0b9b6e68f3fd12aee0cce37e202914a
         <!-- Centered search bar -->
         <%# <form class="d-flex mx-auto justify-content-center" role="search"> %>
           <%# <input class="form-control me-2" type="search" name="location" placeholder="location" aria-label="Search">
@@ -35,10 +38,20 @@
         <ul class="navbar-nav ms-auto">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
+<<<<<<< HEAD
               <%= cl_image_tag(@current_user.image.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+=======
+
+              <% if current_user.image.attached? %>
+                <%= cl_image_tag(current_user.image.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+              <% else %>
+                <%= cl_image_tag("fouk3gtnzeex4436oywgmtiwhds2", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+              <% end %>
+
+>>>>>>> f74144fcc0b9b6e68f3fd12aee0cce37e202914a
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Dashboard", :dashboard, class: "dropdown-item" %>
-                <%= link_to "New bike", new_bike_path, class: "dropdown-item", :data => { user: @user} %>
+                <%= link_to "New bike", new_bike_path, class: "dropdown-item", :data => { user: current_user } %>
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>
             </li>

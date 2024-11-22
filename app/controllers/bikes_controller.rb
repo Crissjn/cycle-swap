@@ -12,6 +12,7 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
+    @bikes = Bike.where.not(user: @user)
     if params[:bike_type].present?
       @bikes = @bikes.where(bike_type: params[:bike_type])
     end
