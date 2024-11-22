@@ -14,6 +14,14 @@ class BikesController < ApplicationController
         lng: bike.longitude
       }
     end
+
+    if params[:location].present?
+      @bikes = @bikes.where("location ILIKE ?", "%#{params[:location]}%")
+    end
+
+    if params[:bike_type].present?
+      @bikes = @bikes.where("bike_type ILIKE ?", "%#{params[:bike_type]}%")
+    end
   end
 
   def new
