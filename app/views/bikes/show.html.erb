@@ -1,5 +1,9 @@
 
+<body style="background-color: beige;">
+<%= link_to "Back", bikes_path, class: "btn btn-primary" %>
+
 <div class="container" style=" margin-top: 30px;">
+
   <div class="row">
     <div class="col-8">
       <div class="card" style="width: 34rem;">
@@ -15,7 +19,7 @@
               <% elsif @bike.condition == "good" %>
                 <i class="<%= 'fa-solid fa-face-smile fa-lg' %> " style= "color: green" >   <%= @bike.condition %></i>
               <% else %>
-                <i class="<%= 'fa-solid fa-face-meh fa-lg'%> " style= "color: yellow" >   <%= @bike.condition %></i>
+                <i class="<%= 'fa-solid fa-face-meh fa-lg'%> " style= "color: black" >   <%= @bike.condition %></i>
                 <% end %>
               </div>
             <div class="col-4"><h5 class="card-title">Size: <%= @bike.size %></h5></div>
