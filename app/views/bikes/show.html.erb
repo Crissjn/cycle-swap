@@ -37,10 +37,10 @@
       <div class="row">
         <h3>Book this bike</h3>
         <%= simple_form_for [@bike, @booking] do |f| %>
-            <%= f.input :start_date  %>
-            <%= f.input :end_date  %>
-            <%= f.submit "Book", class: "btn btn-primary" %>
-        <% end %>
+  <%= f.input :start_date, label: "Start Date", required: false %>
+  <%= f.input :end_date, label: "End Date", required: false %>
+  <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>
         </div>
         <div class="row" style=" margin-top: 10px;">
           <div style="width: 100%; height: 300px;"
