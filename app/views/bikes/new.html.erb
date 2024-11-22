@@ -1,23 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <h3>Hi <%= @user.username %>! Here you can create a new bike.</h3>
-      <div></div>
+      <h3>Hi <%= @user.username %>! Here you can create a new bike</h3>
       <%= simple_form_for @bike do |f| %>
         <div class="row">
           <div class="col-6">
-            <%= f.input :bike_type, collection: ["city bike", "race bike", "cargo bike", "fat bike"]  %>
-            <%= f.input :address  %>
-            <%= f.input :size, collection: ["small", "medium", "large"] %>
+            <%= f.input :bike_type, collection: ["city bike", "race bike", "cargo bike", "fat bike"], required: false %>
+            <%= f.input :address, required: false %>
+            <%= f.input :size, collection: ["small", "medium", "large"], required: false %>
           </div>
           <div class="col-6">
-            <%= f.input :condition ,collection: ["bad", "average", "good"] %>
-            <%= f.input :cost_per_day %>
-            <%= f.input :photo, as: :file %>
-            <%= f.input :description %>
+            <%= f.input :condition, collection: ["bad", "average", "good"], required: false %>
+            <%= f.input :cost_per_day, required: false %>
+            <%= f.input :photo, as: :file, required: false %>
+            <%= f.input :description, required: false %>
           </div>
         </div>
-        <%= f.submit "Create bike", class: "btn btn-primary"%>
+        <%= f.submit "Create bike", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
