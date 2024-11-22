@@ -4,10 +4,17 @@ class BikesController < ApplicationController
   def show
     @bike = Bike.find(params[:id])
     @booking = Booking.new
+    @marker = [{
+        lat: @bike.latitude,
+        lng: @bike.longitude
+      }]
   end
 
   def index
     @bikes = Bike.all
+    if params[:bike_type].present?
+      @bikes = @bikes.where(bike_type: params[:bike_type])
+    end
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
